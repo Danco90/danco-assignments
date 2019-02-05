@@ -1,4 +1,6 @@
 # 'BusyFlights' - The Search engine for your cheap solutions : 'BUSYFLIGHTS-SERVICE' Springboot Microservice 
+
+(readme.md layout format for eclipse)
 .
 
 ###1. configuration 
@@ -42,16 +44,17 @@ java -jar busyflights-0.0.1-SNAPSHOT.jar
 * 4.1) Make sure to have already installed a rest client such as Postman or ADS (Advanced Rest Client)
 the following micro-services UP and RUNNING by following the same procedure for step 2.
 
-* 4.2) Make sure to have the following micro-services UP and RUNNING by following the same procedure for step 2.
+* 4.2) ADVANCED : Make sure to have the following micro-services UP and RUNNING by following the same procedure for step 2.
 
-Naming Server
+Naming Server (For monitoring the status of each service instance)
 
-      - eureka-naming-server
+      - eureka-naming-server  (http://Localhost:8761)
       
 Ticket's Suppliers micro-services
 
-      = crazyair-service (supplier1)
+      = crazyair-service (supplier1) 
       - toughjet-service (supplier2)
+      ::
       - other-service (supplierN)
 
 In a rest client specify the headers 
