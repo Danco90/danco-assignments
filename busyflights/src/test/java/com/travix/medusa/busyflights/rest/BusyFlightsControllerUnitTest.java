@@ -1,4 +1,4 @@
-package com.travix.medusa.busyflights.rest.test;
+package com.travix.medusa.busyflights.rest;
 
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -48,8 +48,8 @@ public class BusyFlightsControllerUnitTest {
 //		
 		BusyFlightsRequest request = new BusyFlightsRequest("WAW", "WRO", "2018-12-28", "2018-01-01", 1);
 		
-		BusyFlightsResponse resp1 = new BusyFlightsResponse("Wizzair","CrazyAir", 19.99, "WAW", "WRO", DateParserUtil.stringToIsoDateTime("2018-12-28"), DateParserUtil.stringToIsoDateTime("2018-01-01"));
-		BusyFlightsResponse resp2 = new BusyFlightsResponse("Raynairr","CrazyAir", 29.99, "WAW", "WRO", DateParserUtil.stringToIsoDateTime("2018-12-28"), DateParserUtil.stringToIsoDateTime("2018-01-01"));
+		BusyFlightsResponse resp1 = new BusyFlightsResponse("Wizzair","CrazyAir", 19.99, "WAW", "WRO", DateParserUtil.stringToIsoLocalDateTime("2018-12-28"), DateParserUtil.stringToIsoLocalDateTime("2018-01-01"));
+		BusyFlightsResponse resp2 = new BusyFlightsResponse("Raynairr","CrazyAir", 29.99, "WAW", "WRO", DateParserUtil.stringToIsoLocalDateTime("2018-12-28"), DateParserUtil.stringToIsoLocalDateTime("2018-01-01"));
 		
 		
 		List<BusyFlightsResponse> allResults = Arrays.asList(resp1,resp2);

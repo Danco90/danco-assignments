@@ -1,4 +1,4 @@
-package com.travix.medusa.busyflights;
+package com.travix.medusa.busyflights.mapper;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -66,10 +66,10 @@ public class BusyFlightsMapperTests {
 		List<ToughJetResponse> toughJetResultList = Arrays.asList(tjtResp, tjtResp2);
 		
 		
-		BusyFlightsResponse bsfResp = new BusyFlightsResponse("Wizzair","CrazyAir", 19.99, "WAW", "WRO", DateParserUtil.stringToIsoDateTime("2018-12-28T12:30:54"), DateParserUtil.stringToIsoDateTime("2018-12-28T12:30:54"));
-		BusyFlightsResponse bsfResp2 = new BusyFlightsResponse("Raynairr","CrazyAir", 29.99, "WAW", "WRO", DateParserUtil.stringToIsoDateTime("2018-12-28T12:30:54"), DateParserUtil.stringToIsoDateTime("2018-12-28T12:30:54"));
-		BusyFlightsResponse bsfResp3 = new BusyFlightsResponse("Wizzair","CrazyAir", 49.99, "WAW", "WRO", DateParserUtil.stringToIsoDateTime("2018-12-28T12:30:54"), DateParserUtil.stringToIsoDateTime("2018-12-28T12:30:54"));
-		BusyFlightsResponse bsfResp4 = new BusyFlightsResponse("Raynairr","CrazyAir", 79.99, "WAW", "WRO", DateParserUtil.stringToIsoDateTime("2018-12-28T12:30:54"), DateParserUtil.stringToIsoDateTime("2018-12-28T12:30:54"));
+		BusyFlightsResponse bsfResp = new BusyFlightsResponse("Wizzair","CrazyAir", 19.99, "WAW", "WRO", DateParserUtil.stringToIsoLocalDateTime("2018-12-28T12:30:54"), DateParserUtil.stringToIsoLocalDateTime("2018-12-28T12:30:54"));
+		BusyFlightsResponse bsfResp2 = new BusyFlightsResponse("Raynairr","CrazyAir", 29.99, "WAW", "WRO", DateParserUtil.stringToIsoLocalDateTime("2018-12-28T12:30:54"), DateParserUtil.stringToIsoLocalDateTime("2018-12-28T12:30:54"));
+		BusyFlightsResponse bsfResp3 = new BusyFlightsResponse("Wizzair","CrazyAir", 49.99, "WAW", "WRO", DateParserUtil.stringToIsoLocalDateTime("2018-12-28T12:30:54"), DateParserUtil.stringToIsoLocalDateTime("2018-12-28T12:30:54"));
+		BusyFlightsResponse bsfResp4 = new BusyFlightsResponse("Raynairr","CrazyAir", 79.99, "WAW", "WRO", DateParserUtil.stringToIsoLocalDateTime("2018-12-28T12:30:54"), DateParserUtil.stringToIsoLocalDateTime("2018-12-28T12:30:54"));
 		
 		List<BusyFlightsResponse> expectedList = Arrays.asList(bsfResp, bsfResp2, bsfResp3, bsfResp4);
 

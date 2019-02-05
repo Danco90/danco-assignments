@@ -1,4 +1,4 @@
-package com.travix.medusa.busyflights;
+package com.travix.medusa.busyflights.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
