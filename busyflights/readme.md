@@ -44,18 +44,44 @@ java -jar busyflights-0.0.1-SNAPSHOT.jar
 * 4.1) Make sure to have already installed a rest client such as Postman or ADS (Advanced Rest Client)
 the following micro-services UP and RUNNING by following the same procedure for step 2.
 
-* 4.2) ADVANCED : Make sure to have the following micro-services UP and RUNNING by following the same procedure for step 2.
+* 4.2) ADVANCED : Make sure to have the following micro-services UP and RUNNING and properly configured by following the same procedure for step 2.
 
 Naming Server (For monitoring the status of each service instance)
 
       - eureka-naming-server  (http://Localhost:8761)
       
-Ticket's Suppliers micro-services
+Ticket's Suppliers micro-services configured for running with EUREKA-NAMING-SERVER
+
 
       = crazyair-service (supplier1) 
       - toughjet-service (supplier2)
       ::
       - other-service (supplierN)
+      
+ nb : each supplier has to be configured by adding 
+ 
+ -Maven dependencies in pom.xml :
+ 
+	<dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-starter-config</artifactId>
+	</dependency>
+	<dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-openfeign</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+    </dependency>
+    
+ -Eureka property in resources/application.properties (to be renamed bootstrap.properties)
+ 
+	eureka.client.service-url.default-zone=http://localhost:8761/eureka
 
 In a rest client specify the headers 
 	Content-Type=[{"key":"Content-Type","name":"Content-Type","value":"text/plain","description":"","type":"text"}] 
