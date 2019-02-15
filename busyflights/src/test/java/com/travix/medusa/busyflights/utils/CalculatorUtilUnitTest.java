@@ -1,4 +1,4 @@
-package com.travix.medusa.busyflights;
+package com.travix.medusa.busyflights.utils;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

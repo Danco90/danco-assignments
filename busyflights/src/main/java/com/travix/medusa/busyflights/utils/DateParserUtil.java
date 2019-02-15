@@ -7,21 +7,27 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.temporal.ChronoField;
+import java.util.Locale;
 
 public class DateParserUtil {
 	
-	public static ZonedDateTime stringToIsoDateTime(String date) {
-//		DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
-		//'2011-12-03 10:15:30'
-		
-		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-		
-		return ZonedDateTime.parse(date, format);
-		
-//		LocalDateTime localdatetime = LocalDateTime.parse(date);
+	public static LocalDateTime stringToIsoLocalDateTime(String date) {
+		//'2011-12-03T10:15:30'
+		//"yyyy-MM-dd'T'HH:mm:ss.SSS";
+		DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+		return LocalDateTime.parse(date, outputFormatter);
 	}
 	
 	public static ZonedDateTime stringToIsoInstant(String input) {
+		//The ISO instant formatter that formats or parses 
+		//an instant in UTC, such as '2011-12-03T10:15:30Z'.
+		//Date and time of an Instant 
+		
+		//2011-12-03T10:15:30Z
+		//YYYY-MM-DDThh:mm:ssZ
+		
+//		"2011-12-03T10:15:30Z";
+		
 //		DateTimeFormatter formatter =  DateTimeFormatter.ISO_INSTANT.withZone(ZoneId.systemDefault());
 		DateTimeFormatter formatter = new DateTimeFormatterBuilder()
 			    .append(DateTimeFormatter.ISO_DATE_TIME)
@@ -38,11 +44,11 @@ public class DateParserUtil {
 	}
 	
 	public static LocalDate stringToIsoLocalDate(String input) {
-		DateTimeFormatter formatter = new DateTimeFormatterBuilder()
-				.appendOptional( DateTimeFormatter.ISO_LOCAL_DATE )
-				.toFormatter();
+		//'03-12-2011'
+		DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.ENGLISH);
 		
-		return LocalDate.parse(input, formatter);
+		return LocalDate.parse(input, outputFormatter);
+		
 	}
 	
 }

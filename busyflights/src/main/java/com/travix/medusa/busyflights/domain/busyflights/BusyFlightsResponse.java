@@ -1,6 +1,6 @@
 package com.travix.medusa.busyflights.domain.busyflights;
 
-import java.time.ZonedDateTime;
+import java.time.LocalDateTime;
 
 public class BusyFlightsResponse {
 	
@@ -9,15 +9,15 @@ public class BusyFlightsResponse {
 	private double fare;
 	private String departureAirportCode;
 	private String destinationAirportCode;
-	private ZonedDateTime departureDate;
-	private ZonedDateTime arrivalDate;
+	private LocalDateTime departureDate;
+	private LocalDateTime arrivalDate;
 	
 	public BusyFlightsResponse() {
 		
 	}
 	
 	public BusyFlightsResponse(String airline, String supplier, double fare, String departureAirportCode,
-			String destinationAirportCode, ZonedDateTime departureDate, ZonedDateTime arrivalDate) {
+			String destinationAirportCode, LocalDateTime departureDate, LocalDateTime arrivalDate) {
 		this.airline = airline;
 		this.supplier = supplier;
 		this.fare = fare;
@@ -56,16 +56,16 @@ public class BusyFlightsResponse {
 	public void setDestinationAirportCode(String destinationAirportCode) {
 		this.destinationAirportCode = destinationAirportCode;
 	}
-	public ZonedDateTime getDepartureDate() {
+	public LocalDateTime getDepartureDate() {
 		return departureDate;
 	}
-	public void setDepartureDate(ZonedDateTime departureDate) {
+	public void setDepartureDate(LocalDateTime departureDate) {
 		this.departureDate = departureDate;
 	}
-	public ZonedDateTime getArrivalDate() {
+	public LocalDateTime getArrivalDate() {
 		return arrivalDate;
 	}
-	public void setArrivalDate(ZonedDateTime arrivalDate) {
+	public void setArrivalDate(LocalDateTime arrivalDate) {
 		this.arrivalDate = arrivalDate;
 	}
 	

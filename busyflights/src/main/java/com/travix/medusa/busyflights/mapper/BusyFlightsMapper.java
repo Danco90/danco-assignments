@@ -52,8 +52,8 @@ public class BusyFlightsMapper {
 				out.setFare(elem.getPrice());
 				out.setDepartureAirportCode(elem.getDepartureAirportCode());
 				out.setDestinationAirportCode(elem.getDestinationAirportCode());
-				out.setDepartureDate(DateParserUtil.stringToIsoDateTime(elem.getDepartureDate()));
-				out.setArrivalDate(DateParserUtil.stringToIsoDateTime(elem.getArrivalDate()));
+				out.setDepartureDate(DateParserUtil.stringToIsoLocalDateTime(elem.getDepartureDate()));
+				out.setArrivalDate(DateParserUtil.stringToIsoLocalDateTime(elem.getArrivalDate()));
 				
 				outFinalList.add(out);
 			});
@@ -70,8 +70,8 @@ public class BusyFlightsMapper {
 				out.setFare(CalculatorUtil.calcFinalPrice(elem.getBasePrice(),elem.getTax(),elem.getDiscount()));
 				out.setDepartureAirportCode(elem.getDepartureAirportName());
 				out.setDestinationAirportCode(elem.getArrivalAirportName());
-				out.setDepartureDate(DateParserUtil.stringToIsoInstant(elem.getOutboundDateTime()));
-				out.setArrivalDate(DateParserUtil.stringToIsoInstant(elem.getInboundDateTime()));
+				out.setDepartureDate(DateParserUtil.stringToIsoLocalDateTime(elem.getOutboundDateTime()));
+				out.setArrivalDate(DateParserUtil.stringToIsoLocalDateTime(elem.getInboundDateTime()));
 				outFinalList.add(out);
 			});
 		}	
